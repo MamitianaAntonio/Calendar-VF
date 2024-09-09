@@ -1,0 +1,18 @@
+.reunion {
+    border: 2px solid #000; 
+    padding: 20px; 
+    width: 80%;
+    margin: 50px auto; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    border-radius: 10px; 
+    background-color: #f9f9f9; 
+  }
+  
+  .Titre {
+    text-align: center; 
+  }
+  
+  .reunion div {
+    margin-bottom: 15px; 
+  }
+  
