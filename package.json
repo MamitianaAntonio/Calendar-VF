@@ -1,6 +1,7 @@
 {
   "name": "front-end",
   "version": "0.1.0",
+  "homepage" : "https://MamitianaAntonio.github.io/Calendar",
   "private": true,
   "dependencies": {
     "@fullcalendar/daygrid": "^6.1.15",
