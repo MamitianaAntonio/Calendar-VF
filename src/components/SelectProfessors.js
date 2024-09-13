@@ -1,5 +1,5 @@
 // src/components/SelectProfessors.js
-
+import styles from '../components/styles/location.module.css';
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabaseClient';
 
@@ -83,13 +83,11 @@ const SelectProfessors = ({ onSelect, onRemove }) => {
     alert(`Total des heures pour ${email} : ${totalHours} heures`);
   };
 
-  const totalHoursForSelected = selectedProfessors.reduce((total, email) => {
-    return total + (hoursData[email] || 0);
-  }, 0);
+
 
   return (
-    <div>
-      <h3>Sélectionner les professeurs</h3>
+    <div className={styles.content}>
+      <h3 className={styles.txt}>Sélectionner des professeurs</h3>
       {professors.map((professor) => (
         <div key={professor.email}>
           <label>
@@ -99,18 +97,14 @@ const SelectProfessors = ({ onSelect, onRemove }) => {
               checked={selectedProfessors.includes(professor.email)}
               onChange={handleChange}
             />
-            {professor.name} - {hoursData[professor.email] ? `${hoursData[professor.email]} heures` : "Aucune heure"}
+            {professor.name} {/* - {hoursData[professor.email] ? `${hoursData[professor.email]} heures` : "Aucune heure" */}
           </label>
         </div>
       ))}
       <button onClick={handleRemoveSelected} disabled={selectedProfessors.length === 0}>
-        Supprimer les professeurs sélectionnés
+        Supprimer
       </button>
-      {selectedProfessors.length > 0 && (
-        <button onClick={() => alert(`Total des heures pour les professeurs sélectionnés : ${totalHoursForSelected} heures`)}>
-          Afficher le total des heures pour les professeurs sélectionnés
-        </button>
-      )}
+      
     </div>
   );
 }

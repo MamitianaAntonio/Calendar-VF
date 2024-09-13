@@ -1,13 +1,14 @@
 {
   "name": "front-end",
   "version": "0.1.0",
-  "homepage" : "https://MamitianaAntonio.github.io/Calendar",
   "private": true,
+  "homepage": "https://MamitianaAntonio.github.io/Calendar-VF",
   "dependencies": {
     "@fullcalendar/daygrid": "^6.1.15",
     "@fullcalendar/interaction": "^6.1.15",
     "@fullcalendar/react": "^6.1.15",
     "@fullcalendar/timegrid": "^6.1.15",
+    "@react-oauth/google": "^0.12.1",
     "@supabase/auth-helpers-react": "^0.5.0",
     "@supabase/supabase-js": "^2.45.3",
     "@testing-library/jest-dom": "^5.17.0",
@@ -25,7 +26,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy" : "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy" : "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

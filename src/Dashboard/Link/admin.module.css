@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+
+/*corps*/
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/*texte*/
+.texte {
+    margin: 15px;
+    font-family: 'Open Sans';
+    font-weight: bold;
+    background: linear-gradient(to right, #00aaff 10%,#fff 50%, #FF9933 60%);
+    -webkit-background-size : 200% auto;
+    background-size: 200% auto;
+    background-clip: border-box;
+    color : #fff;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: 'Lato';
+}
+h3 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    font-family: 'Lato';
+}
+
+
+/*propos*/
+.proposContainer{
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #ccc; /* Bordure simple */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.textePropos {
+    text-align: center; /* Centre le texte du h2 */
+    margin-bottom: 10px; 
+}
+
+.presentation {
+    text-align: justify; /* Justifie le texte du paragraphe */
+    font-family: 'Lato';
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+/*photos*/
+.userInfo {
+    display: flex;
+    align-items: center; /* Aligne l'avatar et le nom verticalement */
+    margin-bottom: 20px; /* Ajoute un espacement en dessous */
+  }
+  
+.avatar {
+    width: 80px; /* Ajustez la taille de l'avatar */
+    height: 80px;
+    border-radius: 50%; /* Rend l'image ronde */
+    object-fit: cover; /* Assure que l'image remplit le cercle */
+    margin-right: 10px; /* Ajoute un espacement à droite */
+}
+
+
+/*info*/
+.final {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+}
+.partenaire {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.imgPartenaire {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+.contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.ImgContact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+/*bouton*/
+.btn {
+    bottom: 400px;
+    z-index: 99;
+    color: #fff;
+    background-color: #FF9933; /* Couleur de fond initiale */
+    padding: 10px 20px;
+    font-family: 'Lato';
+    font-size: 30px;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+    animation: bottonIn 2s ease-out;
+}
+.btn:hover {
+    background-color: #22BBEA; /* Change la couleur de fond au survol */
+    transform: scale(1.05); /* Légèrement agrandit le bouton au survol */
+}
+.btn:active {
+    transform: scale(0.95); /* Réduit légèrement le bouton lorsqu'il est cliqué */
+}
+
+/*copyright*/
+.copyright{
+    color: #000;
+    font-family: 'Open Sans';
+    font-weight: 400;
+    position: absolute;
+    bottom: 10px;
+}

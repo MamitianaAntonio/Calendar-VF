@@ -1,20 +1,111 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
-.cour{
-position: absolute;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-height: 100vh;
-background-color: red;
-padding: 100%;
+/*titre*/
+.title{
+  display: flex;
+  justify-content: center;
+  font-family: 'Lato';
+  font-size: 2.5rem;
+  color: #22bbea;
 }
-.titre{
-  font-size: 28px;
+
+/*general form*/
+.Ensemble {
+  display: flex;
+  justify-content: center;
+}
+
+/*add form*/
+.AjouterCours{
+  padding: 2rem;
+  padding-right: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-right: 5rem;
+  margin-left: 5rem;
+  border: 2px solid #ccc; /* Bordure simple */
+  border-radius: 10px; /* Coins arrondis */
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+/*-------------------------la partie plannification-------------------*/
+.Cour {
+  display: inline;
+  justify-content: center;
+  align-items: center;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  padding-bottom: 1rem;
+  border: 2px solid #ccc; /* Bordure simple */
+  border-radius: 10px; /* Coins arrondis */
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+/* Styling for form elements */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
   font-weight: bold;
-  margin-bottom: 30px;
-  color: black;
-  text-align: center;
+}
+
+.form-group input[type="text"],
+.form-group input[type="datetime-local"],
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="datetime-local"]:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #22BBEA; /* Highlight color on focus */
+  box-shadow: 0 0 5px rgba(34, 187, 234, 0.5); /* Subtle shadow on focus */
+}
+
+.form-group textarea {
+  min-height: 120px; /* Adjust as needed */
+  resize: vertical; /* Allow vertical resizing only */
+}
+.eventDescription {
+  width: 100%; /* Take up full available width */
+  height: 50px; /* Set a fixed height */
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px; 
+  resize: none; /* Disable resizing */
+}
+
+
+/*-------------------montre--------------------------*/
+.montre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  padding-bottom: 0.5rem;
+  margin-left: 5.5rem;
+  border: 2px solid #ccc; /* Bordure simple */
+  border-radius: 10px; /* Coins arrondis */
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+.montre img{
+  border-radius: 50%;
+  animation: pulse 2s infinite; /* Animation infinie */
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
 }

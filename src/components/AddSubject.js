@@ -1,6 +1,7 @@
 // src/components/AddProfessor.js
 import React, { useState } from 'react';
 import { supabase } from '../lib/supabaseClient'; // Assurez-vous que le chemin est correct
+import styles from '../components/styles/location.module.css';
 
 const AddSubject = ({ onSubjectAdded }) => {
   const [subjectName, setSubjectName] = useState('');
@@ -27,11 +28,15 @@ const AddSubject = ({ onSubjectAdded }) => {
       setError(null);
       if (onSubjectAdded) onSubjectAdded();
     }
+
+    setTimeout(() => {
+      window.location.reload();
+    }, 500)
   };
 
   return (
-    <div>
-      <h3>Ajouter une Matière</h3>
+    <div className={styles.container}>
+      <h3 className={styles.txt}>Ajouter une Matière</h3>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -39,7 +44,8 @@ const AddSubject = ({ onSubjectAdded }) => {
           onChange={(e) => setSubjectName(e.target.value)}
           placeholder="Nom de la matière"
         />
-        <button type="submit">Ajouter</button>
+          <br/>
+        <button type="submit" className={styles.btn}>Ajouter</button>
       </form>
       {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>

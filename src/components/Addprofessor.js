@@ -1,6 +1,7 @@
 // src/components/AddProfessor.js
 import { useState } from 'react';
 import { useSupabaseClient } from '@supabase/auth-helpers-react';
+import styles from '../components/styles/location.module.css';
 
 function AddProfessor({ onProfessorAdded }) {
   const [name, setName] = useState('');
@@ -8,7 +9,7 @@ function AddProfessor({ onProfessorAdded }) {
   const supabase = useSupabaseClient();
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
+    event.preventDefault(); 
 
     // Validation des champs
     if (!name || !email) {
@@ -29,24 +30,35 @@ function AddProfessor({ onProfessorAdded }) {
       setName('');
       setEmail('');
     }
+        // Recharger la page après un court délai
+        setTimeout(() => {
+          window.location.reload();
+        }, 500)
+
   };
 
+
+
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        placeholder="Nom"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <button type="submit">Ajouter Professeur</button>
-    </form>
+    <div className={styles.container}>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Nom"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+          <br/>
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+          <br/>
+        <button type="submit" className={styles.btn}>Ajouter Professeur</button>
+      </form> 
+    </div>
   );
 }
 

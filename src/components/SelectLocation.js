@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabaseClient';
+import styles from '../components/styles/location.module.css';
 
 function SelectLocation({ onSelect, onRemove }) {
   const [locations, setLocations] = useState([]);
@@ -70,7 +71,7 @@ function SelectLocation({ onSelect, onRemove }) {
   return (
     <div>
       <h3>Sélectionner un lieu</h3>
-      <select value={selectedLocation} onChange={handleChange}>
+      <select value={selectedLocation} onChange={handleChange}  className={styles.locationSelect}>
         <option value="">Sélectionnez un lieu</option>
         {locations.map(location => (
           <option key={location} value={location}>
@@ -85,13 +86,14 @@ function SelectLocation({ onSelect, onRemove }) {
             type="text"
             placeholder="Entrez le lieu"
             value={newLocation}
-            onChange={(e) => setNewLocation(e.target.value)}
+            onChange={(e) => setNewLocation(e.target.value)} 
+            className={styles.newLocationInput} // Add class here
           />
-          <button onClick={handleAddLocation}>Ajouter</button>
+          <button onClick={handleAddLocation}  className={styles.addLocationButton}>Ajouter</button>
         </>
       )}
       <button onClick={handleRemoveSelected} disabled={!selectedLocation}>
-        Supprimer le lieu sélectionné
+        Supprimer
       </button>
     </div>
   );

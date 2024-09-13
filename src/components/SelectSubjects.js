@@ -68,7 +68,7 @@ function SelectSubjects({ onSelect, onRemove }) {
         </div>
       ))}
       <button onClick={handleRemoveSelected} disabled={selectedSubjects.length === 0}>
-        Supprimer les matières sélectionnées
+        Supprimer
       </button>
     </div>
   );

@@ -94,3 +94,57 @@
   text-align: center;
   background-color: #fff;
 }
+
+
+/*partie titre*/
+.titre {
+  font-size: 3em;
+  font-family: 'Lato';
+  background: linear-gradient(to right, #22BBEA, #FF9933);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 400% 100%;
+  animation: gradientAnimation 5s linear infinite;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/*aide*/
+.aide {
+  border: 2px solid transparent;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: #fff;
+  transition: border 0.6s ease;
+}
+.aide:hover {
+  border-image: linear-gradient(to right, #22BBEA, #FF9933) 1;
+  color: #000;
+  background-color: #fff;
+}
+.aide h3 {
+  font-weight: 300;
+}
+.aide h3:hover {
+  font-weight: bold;
+}
+
+/*photo*/
+.calendar img {
+  border-image: linear-gradient(to right, #22BBEA, #FF9933) 1;
+  animation: pulse 2s infinite; /* Animation infinie */
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+
+

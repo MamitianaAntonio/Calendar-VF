@@ -1,6 +1,7 @@
 // onLocationAdded.js   
 import React, { useState } from 'react';
 import { supabase } from '../lib/supabaseClient'; // Assurez-vous que le chemin est correct
+import styles from '../components/styles/location.module.css';
 
 const AddLocation = ({ onLocationAdded }) => {
   const [locationName, setLocationName] = useState('');
@@ -27,11 +28,14 @@ const AddLocation = ({ onLocationAdded }) => {
       setError(null);
       if (onLocationAdded) onLocationAdded();
     }
+    setTimeout(() => {
+      window.location.reload();
+    }, 500)
   };
 
   return (
-    <div>
-      <h3>Ajouter un Lieu</h3>
+    <div className={styles.container}>
+      <h3 className={styles.txt}>Ajouter un Lieu</h3>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -39,7 +43,8 @@ const AddLocation = ({ onLocationAdded }) => {
           onChange={(e) => setLocationName(e.target.value)}
           placeholder="Nom du lieu"
         />
-        <button type="submit">Ajouter</button>
+        <br/>
+        <button type="submit" className={styles.btn}>Ajouter</button>
       </form>
       {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>
